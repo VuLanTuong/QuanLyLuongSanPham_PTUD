@@ -6,7 +6,7 @@ package ui;
 
 /**
  *
- * @author ADMIN
+ *
  */
 import javax.swing.JLabel;
 

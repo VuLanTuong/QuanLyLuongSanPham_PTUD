@@ -18,11 +18,14 @@ public class BangChamCongCNTableModel extends AbstractTableModel {
 	private static final int TO = 3;
 	private static final int NGAYCHAMCONG = 4;
 	private static final int CALAM = 5;
-	private static final int TINHTRANG = 6;
+	private static final int TRANGTHAI = 6;
 	private static final int MACD = 7;
-	private static final int MASP = 8;
+	private static final int TENCD = 8;
 	private static final int SOLUONGLAMDUOC = 9;
-	private static final int NGUOICHAMCONG = 10;
+	private static final int MASP = 10;
+	private static final int TENSP = 11;
+	private static final int MANGUOICHAMCONG = 12;
+	private static final int TENNGUOICHAMCONG = 13;
 	
 	private List<BangChamCongCongNhan> dsBangChamCongCN;
 	private String[] headers;
@@ -61,21 +64,27 @@ public class BangChamCongCNTableModel extends AbstractTableModel {
 		case TENCN:
 			return bangChamCong.getPhanCong().getCongNhan().getTenCongNhan();
 		case TO:
-			return bangChamCong.getPhanCong().getCongNhan().getToNhom();
+			return bangChamCong.getPhanCong().getCongNhan().getToNhom().getTenToNhom();
 		case NGAYCHAMCONG:
 			return bangChamCong.getNgayChamCong();
 		case CALAM:
-			return bangChamCong.getPhanCong().getCaLam();
-		case TINHTRANG:
-			return bangChamCong.getTrangThai();
+			return bangChamCong.getCaLam();
+		case TRANGTHAI:
+			return bangChamCong.getTrangthai();
 		case MACD:
 			return bangChamCong.getPhanCong().getCongDoan().getMaCongDoan();
 		case MASP:
 			return bangChamCong.getPhanCong().getCongDoan().getSanPham().getMaSanPham();
 		case SOLUONGLAMDUOC:
 			return bangChamCong.getSoLuongLam();
-		case NGUOICHAMCONG:
+		case MANGUOICHAMCONG:
 			return bangChamCong.getNguoiChamCong().getMaNhanVien();
+		case TENCD:
+			return bangChamCong.getPhanCong().getCongDoan().getTenCongDoan();
+		case TENSP:
+			return bangChamCong.getPhanCong().getSanPham().getTenSanPham();
+		case TENNGUOICHAMCONG:
+			return bangChamCong.getNguoiChamCong().getTenNhanVien();
 		default:
 			return bangChamCong;
 		}

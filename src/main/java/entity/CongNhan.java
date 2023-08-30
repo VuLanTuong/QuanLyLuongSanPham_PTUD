@@ -1,6 +1,7 @@
 package entity;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class CongNhan {
 	private String maCongNhan;
@@ -10,6 +11,7 @@ public class CongNhan {
 	private Date ngayVaoLam;
 	private Date ngaySinh;
 	private String gioiTinh;
+	private String anhDaiDien;
 	private ToNhom toNhom;
 	public String getMaCongNhan() {
 		return maCongNhan;
@@ -53,34 +55,21 @@ public class CongNhan {
 	public void setGioiTinh(String gioiTinh) {
 		this.gioiTinh = gioiTinh;
 	}
+	public String getAnhDaiDien() {
+		return anhDaiDien;
+	}
+	public void setAnhDaiDien(String anhDaiDien) {
+		this.anhDaiDien = anhDaiDien;
+	}
 	public ToNhom getToNhom() {
 		return toNhom;
 	}
 	public void setToNhom(ToNhom toNhom) {
 		this.toNhom = toNhom;
 	}
-	public CongNhan(String maCongNhan, String tenCongNhan, String soDienThoai, DiaChi diaChi, Date ngayVaoLam,
-			Date ngaySinh, String gioiTinh, ToNhom toNhom) {
-		super();
-		this.maCongNhan = maCongNhan;
-		this.tenCongNhan = tenCongNhan;
-		this.soDienThoai = soDienThoai;
-		this.diaChi = diaChi;
-		this.ngayVaoLam = ngayVaoLam;
-		this.ngaySinh = ngaySinh;
-		this.gioiTinh = gioiTinh;
-		this.toNhom = toNhom;
-	}
-	public CongNhan() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((maCongNhan == null) ? 0 : maCongNhan.hashCode());
-		return result;
+		return Objects.hash(maCongNhan);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -91,18 +80,34 @@ public class CongNhan {
 		if (getClass() != obj.getClass())
 			return false;
 		CongNhan other = (CongNhan) obj;
-		if (maCongNhan == null) {
-			if (other.maCongNhan != null)
-				return false;
-		} else if (!maCongNhan.equals(other.maCongNhan))
-			return false;
-		return true;
+		return Objects.equals(maCongNhan, other.maCongNhan);
+	}
+	
+	
+	
+	public CongNhan(String maCongNhan, String tenCongNhan, String soDienThoai, DiaChi diaChi, Date ngayVaoLam,
+			Date ngaySinh, String gioiTinh, String anhDaiDien, ToNhom toNhom) {
+		super();
+		this.maCongNhan = maCongNhan;
+		this.tenCongNhan = tenCongNhan;
+		this.soDienThoai = soDienThoai;
+		this.diaChi = diaChi;
+		this.ngayVaoLam = ngayVaoLam;
+		this.ngaySinh = ngaySinh;
+		this.gioiTinh = gioiTinh;
+		this.anhDaiDien = anhDaiDien;
+		this.toNhom = toNhom;
+	}
+	public CongNhan() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public String toString() {
 		return "CongNhan [maCongNhan=" + maCongNhan + ", tenCongNhan=" + tenCongNhan + ", soDienThoai=" + soDienThoai
 				+ ", diaChi=" + diaChi + ", ngayVaoLam=" + ngayVaoLam + ", ngaySinh=" + ngaySinh + ", gioiTinh="
-				+ gioiTinh + ", toNhom=" + toNhom + "]";
+				+ gioiTinh + ", anhDaiDien=" + anhDaiDien + ", toNhom=" + toNhom + "]";
 	}
+	
 	
 }

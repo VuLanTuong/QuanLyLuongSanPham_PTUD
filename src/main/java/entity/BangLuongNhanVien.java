@@ -10,6 +10,8 @@ public class BangLuongNhanVien {
 	private double luongCoBan;
 	private double phuCap;
 	private double heSoLuong;
+	private int soPhepDuocNghi;
+	
 	public String getMaBangLuong() {
 		return maBangLuong;
 	}
@@ -46,6 +48,14 @@ public class BangLuongNhanVien {
 	public void setHeSoLuong(double heSoLuong) {
 		this.heSoLuong = heSoLuong;
 	}
+	
+	
+	public int getSoPhepDuocNghi() {
+		return soPhepDuocNghi;
+	}
+	public void setSoPhepDuocNghi(int soPhepDuocNghi) {
+		this.soPhepDuocNghi = soPhepDuocNghi;
+	}
 	@Override
 	public int hashCode() {
 		return Objects.hash(maBangLuong);
@@ -61,8 +71,9 @@ public class BangLuongNhanVien {
 		BangLuongNhanVien other = (BangLuongNhanVien) obj;
 		return Objects.equals(maBangLuong, other.maBangLuong);
 	}
+	
 	public BangLuongNhanVien(String maBangLuong, NhanVien nhanVien, Date ngayTinhLuong, double luongCoBan,
-			double phuCap, double heSoLuong) {
+			double phuCap, double heSoLuong, int soPhepDuocNghi) {
 		super();
 		this.maBangLuong = maBangLuong;
 		this.nhanVien = nhanVien;
@@ -70,6 +81,7 @@ public class BangLuongNhanVien {
 		this.luongCoBan = luongCoBan;
 		this.phuCap = phuCap;
 		this.heSoLuong = heSoLuong;
+		this.soPhepDuocNghi = soPhepDuocNghi;
 	}
 	public BangLuongNhanVien() {
 		super();
@@ -79,7 +91,7 @@ public class BangLuongNhanVien {
 	public String toString() {
 		return "BangLuongNhanVien [maBangLuong=" + maBangLuong + ", nhanVien=" + nhanVien + ", ngayTinhLuong="
 				+ ngayTinhLuong + ", luongCoBan=" + luongCoBan + ", phuCap=" + phuCap + ", heSoLuong=" + heSoLuong
-				+ "]";
+				+ "]\n";
 	}
 	
 	

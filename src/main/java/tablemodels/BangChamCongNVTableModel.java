@@ -15,11 +15,13 @@ public class BangChamCongNVTableModel extends AbstractTableModel {
 	private static final int MACC = 0;
 	private static final int MANV = 1;
 	private static final int TENNV = 2;
-	private static final int CALAM = 3;
+	private static final int SOGIOLAMTHEM = 3;
 	private static final int NGAYCHAMCONG = 4;
 	private static final int TRANGTHAI = 5;
 	private static final int MANGUOICHAMCONG = 6;
 	private static final int TENNGUOICHAMCONG = 7;
+	private static final int TINHTRANGCONG = 8;
+	
 	
 	private List<BangChamCongNhanVien> dsCCNV;
 	private String[] headers;
@@ -54,8 +56,8 @@ public class BangChamCongNVTableModel extends AbstractTableModel {
 			return chamCongNhanVien.getNhanVien().getMaNhanVien();
 		case TENNV:
 			return chamCongNhanVien.getNhanVien().getTenNhanVien();
-		case CALAM:
-			return chamCongNhanVien.getCaLam();
+		case SOGIOLAMTHEM:
+			return String.format("%.2f", chamCongNhanVien.getSoGioLamThem());
 		case NGAYCHAMCONG:
 			return chamCongNhanVien.getNgayChamCong();
 		case TRANGTHAI:
@@ -64,6 +66,9 @@ public class BangChamCongNVTableModel extends AbstractTableModel {
 			return chamCongNhanVien.getNguoiChamCong().getMaNhanVien();
 		case TENNGUOICHAMCONG:
 			return chamCongNhanVien.getNguoiChamCong().getTenNhanVien();
+		case TINHTRANGCONG:
+			return chamCongNhanVien.getTinhTrangChamCong();
+
 		default:
 			return chamCongNhanVien;
 		}

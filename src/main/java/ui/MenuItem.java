@@ -46,7 +46,7 @@ public class MenuItem extends javax.swing.JPanel {
             subMenu[i].setVisible(false);
         }
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -134,6 +134,10 @@ public class MenuItem extends javax.swing.JPanel {
         }).start();
     }
 
+    public void setIcon(Icon icon){
+        lbIcon.setIcon(icon);
+    }
+    
     private void sleep() {
         try {
             Thread.sleep(20);

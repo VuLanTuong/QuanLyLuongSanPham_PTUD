@@ -1,9 +1,16 @@
 package tablemodels;
 
+import java.sql.SQLException;
+import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import javax.swing.table.AbstractTableModel;
 
+import dao.BangChamCongNhanVienDAO;
+import dao.BangLuongNhanVienDAO;
+import entity.BangChamCongNhanVien;
 import entity.BangLuongNhanVien;
 
 public class BangLuongNhanVienTableModel extends AbstractTableModel{
@@ -18,19 +25,34 @@ public class BangLuongNhanVienTableModel extends AbstractTableModel{
 	private static final int HESOLUONG = 4;
 	private static final int LUONGCOBAN = 5;
 	private static final int PHUCAP = 6;
-	private static final int TONGLUONG = 7;
+	private static final int SOPHEPDUOCNGHI = 7;
+	private static final int NGAYLAPBANGLUONG = 8;
+	private static final int TONGLUONG = 9;
 	private String[] headers;
-	private List<BangLuongNhanVien> dsBLNV;
 	
-	public BangLuongNhanVienTableModel(String[] headers, List<BangLuongNhanVien> dsBLNV) {
+	private BangChamCongNhanVienDAO bangChamCongNhanVienDAO;
+	private BangLuongNhanVienDAO bangLuongNhanVienDAO;
+	private List<BangLuongNhanVien> danhSachBangLuongNhanVien;
+	List<BangChamCongNhanVien> dsChamCong ;
+	private boolean tinhLuong;
+	private int thangLuong;
+	private int namLuong;
+//	private List<BangChamCongNhanVien> dsBangChamCongNhanVien = new ArrayList<>();
+	public BangLuongNhanVienTableModel(String[] headers, List<BangLuongNhanVien> dsBLNV, boolean tinhLuong,int thangTinhLuong,int namTinhLuong) {
 		super();
 		this.headers = headers;
-		this.dsBLNV = dsBLNV;
+		this.danhSachBangLuongNhanVien = dsBLNV;
+		this.tinhLuong = tinhLuong;
+		this.thangLuong = thangTinhLuong;
+		this.namLuong = namTinhLuong;
+		bangChamCongNhanVienDAO = new BangChamCongNhanVienDAO();
+		bangLuongNhanVienDAO = new BangLuongNhanVienDAO();
+		
 	}
 	@Override
 	public int getRowCount() {
 		// TODO Auto-generated method stub
-		return dsBLNV.size();
+		return danhSachBangLuongNhanVien.size();
 	}
 
 	@Override
@@ -41,7 +63,12 @@ public class BangLuongNhanVienTableModel extends AbstractTableModel{
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
-		BangLuongNhanVien blnv = dsBLNV.get(rowIndex);
+		BangLuongNhanVien blnv = danhSachBangLuongNhanVien.get(rowIndex);
+		NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
+//		BangChamCongNhanVien ccnv = new BangChamCongNhanVien();
+//		BangChamCongNhanVienDAO bangChamCongNhanVienDAO = new BangChamCongNhanVienDAO();
+//		
+//		
 		switch (columnIndex) {
 		case MABANGLUONG:
 			return blnv.getMaBangLuong();
@@ -50,15 +77,44 @@ public class BangLuongNhanVienTableModel extends AbstractTableModel{
 		case HOTEN:
 			return blnv.getNhanVien().getTenNhanVien();
 		case LUONGCOBAN:
-			return blnv.getLuongCoBan();
+
+        	
+        	String luongCoBan = formatter.format(blnv.getLuongCoBan());
+			return luongCoBan;
 		case PHUCAP:
-			return blnv.getPhuCap();
+			
+        	String phuCap = formatter.format(blnv.getPhuCap());
+			return phuCap;
 		case TONGLUONG:
-			return null;
+
+
+//			
+			if(tinhLuong == true) {
+				String luong = null;
+				BangChamCongNhanVien ccnv = new BangChamCongNhanVien();
+				
+				ccnv = bangChamCongNhanVienDAO.timBangChamCongBangMaNhanVien(blnv.getNhanVien().getMaNhanVien(),thangLuong,namLuong);
+				try {
+					luong = bangLuongNhanVienDAO.tinhLuongNhanVienTheoThang(ccnv, thangLuong, namLuong);
+					double luongs = Double.parseDouble(luong);
+	            	
+	            	luong = formatter.format(luongs);
+					
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				 return luong;
+				
+			}
 		case VAITRO:
 			return blnv.getNhanVien().getVaiTro();
 		case HESOLUONG:
 			return blnv.getHeSoLuong();
+		case SOPHEPDUOCNGHI:
+			return blnv.getSoPhepDuocNghi();
+		case NGAYLAPBANGLUONG:
+			return blnv.getNgayTinhLuong();
 		default:
 			return blnv;
 		}

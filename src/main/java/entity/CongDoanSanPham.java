@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.Objects;
+
 public class CongDoanSanPham {
 	private String maCongDoan;
 	private String tenCongDoan;
@@ -7,6 +9,7 @@ public class CongDoanSanPham {
 	private int soLuong;
 	private String tinhTrang;
 	private String moTa;
+	private int thuTu;
 	private SanPham sanPham;
 	public String getMaCongDoan() {
 		return maCongDoan;
@@ -44,39 +47,21 @@ public class CongDoanSanPham {
 	public void setMoTa(String moTa) {
 		this.moTa = moTa;
 	}
+	public int getThuTu() {
+		return thuTu;
+	}
+	public void setThuTu(int thuTu) {
+		this.thuTu = thuTu;
+	}
 	public SanPham getSanPham() {
 		return sanPham;
 	}
 	public void setSanPham(SanPham sanPham) {
 		this.sanPham = sanPham;
 	}
-	public CongDoanSanPham(String maCongDoan, String tenCongDoan, double tienCongDoan, int soLuong, String tinhTrang,
-			String moTa, SanPham sanPham) {
-		super();
-		this.maCongDoan = maCongDoan;
-		this.tenCongDoan = tenCongDoan;
-		this.tienCongDoan = tienCongDoan;
-		this.soLuong = soLuong;
-		this.tinhTrang = tinhTrang;
-		this.moTa = moTa;
-		this.sanPham = sanPham;
-	}
-	public CongDoanSanPham() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	@Override
-	public String toString() {
-		return "CongDoanSanPham [maCongDoan=" + maCongDoan + ", tenCongDoan=" + tenCongDoan + ", tienCongDoan="
-				+ tienCongDoan + ", soLuong=" + soLuong + ", tinhTrang=" + tinhTrang + ", moTa=" + moTa + ", sanPham="
-				+ sanPham + "]";
-	}
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((maCongDoan == null) ? 0 : maCongDoan.hashCode());
-		return result;
+		return Objects.hash(maCongDoan);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -87,12 +72,30 @@ public class CongDoanSanPham {
 		if (getClass() != obj.getClass())
 			return false;
 		CongDoanSanPham other = (CongDoanSanPham) obj;
-		if (maCongDoan == null) {
-			if (other.maCongDoan != null)
-				return false;
-		} else if (!maCongDoan.equals(other.maCongDoan))
-			return false;
-		return true;
+		return Objects.equals(maCongDoan, other.maCongDoan);
 	}
+	public CongDoanSanPham(String maCongDoan, String tenCongDoan, double tienCongDoan, int soLuong, String tinhTrang,
+			String moTa, int thuTu, SanPham sanPham) {
+		super();
+		this.maCongDoan = maCongDoan;
+		this.tenCongDoan = tenCongDoan;
+		this.tienCongDoan = tienCongDoan;
+		this.soLuong = soLuong;
+		this.tinhTrang = tinhTrang;
+		this.moTa = moTa;
+		this.thuTu = thuTu;
+		this.sanPham = sanPham;
+	}
+	public CongDoanSanPham() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "CongDoanSanPham [maCongDoan=" + maCongDoan + ", tenCongDoan=" + tenCongDoan + ", tienCongDoan="
+				+ tienCongDoan + ", soLuong=" + soLuong + ", tinhTrang=" + tinhTrang + ", moTa=" + moTa + ", thuTu="
+				+ thuTu + ", sanPham=" + sanPham + "]";
+	}
+	
 	
 }

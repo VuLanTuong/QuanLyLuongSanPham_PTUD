@@ -17,6 +17,8 @@ public class NhanVienTableModel extends AbstractTableModel {
 	private static final int NGAYVAOLAM = 6;
 	private static final int GIOITINH = 7;
 	private static final int VAITRO = 8;
+	private static final int TRINHDOCHUYENMON = 9;
+	private static final int TRINHDONGOAINGU = 10;
 	
 	private String[] headers;
 	private List<NhanVien> dsNV;
@@ -71,6 +73,10 @@ public class NhanVienTableModel extends AbstractTableModel {
 			return nhanVien.getGioiTinh();
 		case VAITRO:
 			return nhanVien.getVaiTro();
+		case TRINHDOCHUYENMON:
+			return nhanVien.getTrinhDoChuyenMon();
+		case TRINHDONGOAINGU:
+			return nhanVien.getTrinhDoNgoaiNgu();
 		default:
 			return nhanVien;
 		}

@@ -26,22 +26,22 @@ public class InBangLuong extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnlInBangLuong = new javax.swing.JPanel();
-        jLabel101 = new javax.swing.JLabel();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
         jButton39 = new javax.swing.JButton();
         jButton40 = new javax.swing.JButton();
-        jLabel102 = new javax.swing.JLabel();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTable6 = new javax.swing.JTable();
+        jLabel101 = new javax.swing.JLabel();
 
-        pnlInBangLuong.setBackground(new java.awt.Color(255, 255, 255));
+        jButton39.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton39.setText("Xác nhận in");
+        jButton39.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel101.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel101.setText("BẢNG LƯƠNG THÁNG 8/2023");
+        jButton40.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/close.png"))); // NOI18N
+        jButton40.setText("Hủy");
+        jButton40.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTable6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTable6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTable6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"", "", "", "", null},
@@ -61,75 +61,35 @@ public class InBangLuong extends javax.swing.JPanel {
         ));
         jScrollPane9.setViewportView(jTable6);
 
-        jButton39.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton39.setText("Xác nhận in");
-
-        jButton40.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/close.png"))); // NOI18N
-        jButton40.setText("Hủy");
-
-        jLabel102.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel102.setText("Tổng tiền:");
-
-        jTextPane1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jScrollPane10.setViewportView(jTextPane1);
-
-        javax.swing.GroupLayout pnlInBangLuongLayout = new javax.swing.GroupLayout(pnlInBangLuong);
-        pnlInBangLuong.setLayout(pnlInBangLuongLayout);
-        pnlInBangLuongLayout.setHorizontalGroup(
-            pnlInBangLuongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInBangLuongLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane9))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInBangLuongLayout.createSequentialGroup()
-                .addGap(0, 166, Short.MAX_VALUE)
-                .addGroup(pnlInBangLuongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInBangLuongLayout.createSequentialGroup()
-                        .addComponent(jLabel102)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(jButton39)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton40)
-                        .addGap(214, 214, 214))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInBangLuongLayout.createSequentialGroup()
-                        .addComponent(jLabel101)
-                        .addGap(256, 256, 256))))
-        );
-        pnlInBangLuongLayout.setVerticalGroup(
-            pnlInBangLuongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlInBangLuongLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel101, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addGroup(pnlInBangLuongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlInBangLuongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton40)
-                        .addComponent(jButton39))
-                    .addGroup(pnlInBangLuongLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel102, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(34, Short.MAX_VALUE))
-        );
+        jLabel101.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel101.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel101.setText("BẢNG LƯƠNG THÁNG 8/2023");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlInBangLuong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(1, 1, 1)
+                .addComponent(jLabel101, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(266, 266, 266)
+                .addComponent(jButton39, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(91, 91, 91)
+                .addComponent(jButton40, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnlInBangLuong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel101, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton40, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton39, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -138,11 +98,7 @@ public class InBangLuong extends javax.swing.JPanel {
     private javax.swing.JButton jButton39;
     private javax.swing.JButton jButton40;
     private javax.swing.JLabel jLabel101;
-    private javax.swing.JLabel jLabel102;
-    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTable jTable6;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JPanel pnlInBangLuong;
     // End of variables declaration//GEN-END:variables
 }

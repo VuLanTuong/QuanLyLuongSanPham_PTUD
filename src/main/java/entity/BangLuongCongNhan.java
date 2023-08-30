@@ -7,11 +7,18 @@ public class BangLuongCongNhan {
 	private String maBangLuong;
 	private CongNhan congNhan;
 	private Date ngayLapBangLuong;
-	private double tongLuong;
+	private double luong;
+	private double tienThuongChuyenCan;
 	
 
 	
 	
+	public double getTienThuongChuyenCan() {
+		return tienThuongChuyenCan;
+	}
+	public void setTienThuongChuyenCan(double tienThuongChuyenCan) {
+		this.tienThuongChuyenCan = tienThuongChuyenCan;
+	}
 	public String getMaBangLuong() {
 		return maBangLuong;
 	}
@@ -30,11 +37,14 @@ public class BangLuongCongNhan {
 	public void setNgayLapBangLuong(Date ngayLapBangLuong) {
 		this.ngayLapBangLuong = ngayLapBangLuong;
 	}
-	public double getTongLuong() {
-		return tongLuong;
+	
+	
+	
+	public double getLuong() {
+		return luong;
 	}
-	public void setTongLuong(double tongLuong) {
-		this.tongLuong = tongLuong;
+	public void setLuong(double luong) {
+		this.luong = luong;
 	}
 	@Override
 	public int hashCode() {
@@ -51,13 +61,19 @@ public class BangLuongCongNhan {
 		BangLuongCongNhan other = (BangLuongCongNhan) obj;
 		return Objects.equals(maBangLuong, other.maBangLuong);
 	}
-	public BangLuongCongNhan(String maBangLuong, CongNhan congNhan, Date ngayLapBangLuong, double tongLuong) {
+	
+	
+	
+	public BangLuongCongNhan(String maBangLuong, CongNhan congNhan, Date ngayLapBangLuong, double luong,
+			double tienThuongChuyenCan) {
 		super();
 		this.maBangLuong = maBangLuong;
 		this.congNhan = congNhan;
 		this.ngayLapBangLuong = ngayLapBangLuong;
-		this.tongLuong = tongLuong;
+		this.luong = luong;
+		this.tienThuongChuyenCan = tienThuongChuyenCan;
 	}
+	
 	public BangLuongCongNhan() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -65,7 +81,7 @@ public class BangLuongCongNhan {
 	@Override
 	public String toString() {
 		return "BangLuongCongNhan [maBangLuong=" + maBangLuong + ", congNhan=" + congNhan + ", ngayLapBangLuong="
-				+ ngayLapBangLuong + ", tongLuong=" + tongLuong + "]";
+				+ ngayLapBangLuong + "tienThuongChuyenCan=" + tienThuongChuyenCan +  "]";
 	}
 	
 	

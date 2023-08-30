@@ -10,14 +10,8 @@ public class SanPham {
 	private int soLuongSanXuat;	
 	private String chatLieu;
 	private String kichThuoc;	
+	private String anhSP;
 	private int soLuongCongDoan;
-	private String anhSanPham;
-	public String getChatLieu() {
-		return chatLieu;
-	}
-	public void setChatLieu(String chatLieu) {
-		this.chatLieu = chatLieu;
-	}
 	public String getMaSanPham() {
 		return maSanPham;
 	}
@@ -48,46 +42,29 @@ public class SanPham {
 	public void setSoLuongSanXuat(int soLuongSanXuat) {
 		this.soLuongSanXuat = soLuongSanXuat;
 	}
+	public String getChatLieu() {
+		return chatLieu;
+	}
+	public void setChatLieu(String chatLieu) {
+		this.chatLieu = chatLieu;
+	}
 	public String getKichThuoc() {
 		return kichThuoc;
 	}
 	public void setKichThuoc(String kichThuoc) {
 		this.kichThuoc = kichThuoc;
 	}
+	public String getAnhSP() {
+		return anhSP;
+	}
+	public void setAnhSP(String anhSP) {
+		this.anhSP = anhSP;
+	}
 	public int getSoLuongCongDoan() {
 		return soLuongCongDoan;
 	}
 	public void setSoLuongCongDoan(int soLuongCongDoan) {
 		this.soLuongCongDoan = soLuongCongDoan;
-	}
-	public String getAnhSanPham() {
-		return anhSanPham;
-	}
-	public void setAnhSanPham(String anhSanPham) {
-		this.anhSanPham = anhSanPham;
-	}
-	public SanPham(String maSanPham, String tenSanPham, double giaTien, String moTa, int soLuongSanXuat,
-			String chatLieu, String kichThuoc, int soLuongCongDoan, String anhSanPham) {
-		super();
-		this.maSanPham = maSanPham;
-		this.tenSanPham = tenSanPham;
-		this.giaTien = giaTien;
-		this.moTa = moTa;
-		this.soLuongSanXuat = soLuongSanXuat;
-		this.chatLieu = chatLieu;
-		this.kichThuoc = kichThuoc;
-		this.soLuongCongDoan = soLuongCongDoan;
-		this.anhSanPham = anhSanPham;
-	}
-	public SanPham() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	@Override
-	public String toString() {
-		return "SanPham [maSanPham=" + maSanPham + ", tenSanPham=" + tenSanPham + ", giaTien=" + giaTien + ", moTa="
-				+ moTa + ", soLuongSanXuat=" + soLuongSanXuat + ", chatLieu=" + chatLieu + ", kichThuoc=" + kichThuoc
-				+ ", soLuongCongDoan=" + soLuongCongDoan + ", anhSanPham=" + anhSanPham + "]";
 	}
 	@Override
 	public int hashCode() {
@@ -104,6 +81,30 @@ public class SanPham {
 		SanPham other = (SanPham) obj;
 		return Objects.equals(maSanPham, other.maSanPham);
 	}
+	public SanPham(String maSanPham, String tenSanPham, double giaTien, String moTa, int soLuongSanXuat,
+			String chatLieu, String kichThuoc, String anhSP, int soLuongCongDoan) {
+		super();
+		this.maSanPham = maSanPham;
+		this.tenSanPham = tenSanPham;
+		this.giaTien = giaTien;
+		this.moTa = moTa;
+		this.soLuongSanXuat = soLuongSanXuat;
+		this.chatLieu = chatLieu;
+		this.kichThuoc = kichThuoc;
+		this.anhSP = anhSP;
+		this.soLuongCongDoan = soLuongCongDoan;
+	}
+	public SanPham() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "SanPham [maSanPham=" + maSanPham + ", tenSanPham=" + tenSanPham + ", giaTien=" + giaTien + ", moTa="
+				+ moTa + ", soLuongSanXuat=" + soLuongSanXuat + ", chatLieu=" + chatLieu + ", kichThuoc=" + kichThuoc
+				+ ", anhSP=" + anhSP + ", soLuongCongDoan=" + soLuongCongDoan + "]";
+	}
+	
 	
 	
 }

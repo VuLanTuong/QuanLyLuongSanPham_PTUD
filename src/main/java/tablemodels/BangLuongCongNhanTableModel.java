@@ -1,51 +1,51 @@
 package tablemodels;
 
+import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import javax.swing.table.AbstractTableModel;
 
 import dao.BangChamCongCongNhanDAO;
 import dao.BangPhanCongCongNhanDAO;
+import dao.CongDoanSanPhamDAO;
+import dao.SanPhamDAO;
 import entity.BangChamCongCongNhan;
 import entity.BangLuongCongNhan;
 import entity.BangPhanCongCongNhan;
+import entity.CongDoanSanPham;
 import entity.CongNhan;
+import entity.SanPham;
 
 public class BangLuongCongNhanTableModel extends AbstractTableModel {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private static final int MABANGLUONG = 0;
-	private static final int MACONGNHAN = 1;
-	private static final int HOTEN = 2;
+	private static final int MACONGNHAN = 0;
+	private static final int TENCONGNHAN = 1;
+	private static final int TENSANPHAM = 2;
 	private static final int TENCONGDOAN = 3;
-	private static final int SOLUONGSP = 4;
-	private static final int LUONG = 5;
-	private String[] headers;
-	private List<BangLuongCongNhan> dsBLCN;
-	private BangChamCongCongNhan bangChamCongCongNhan;
-	private CongNhan congNhan;
-	private BangPhanCongCongNhan bangPhanCongCongNhan;
-	private BangPhanCongCongNhanDAO bangPhanCongCongNhanDAO;
-	private BangChamCongCongNhanDAO bangChamCongCongNhanDAO;
-	private String maBangPhanCong;
-	private int soLuongSanPham = 0;
+	private static final int SOLUONGLAM = 4;
+	private static final int THOIGIAN = 5;
+	private static final int TONGTIENCONGDOAN = 6;
+	private static final int TIENTHUONGCHUYENCAN = 7;
+	
 
-	public BangLuongCongNhanTableModel(String[] headers, List<BangLuongCongNhan> dsBLCN) {
-		super();
+	private String[] headers;
+	private List<List<String>> danhSachBangLuongTableModel;
+
+	public BangLuongCongNhanTableModel(String[] headers, List<List<String>> danhSachBangLuongTableModel) {
+		this.danhSachBangLuongTableModel = danhSachBangLuongTableModel;
 		this.headers = headers;
-		this.dsBLCN = dsBLCN;
-		bangPhanCongCongNhan = new BangPhanCongCongNhan();
-		bangPhanCongCongNhanDAO = new BangPhanCongCongNhanDAO();
-		bangChamCongCongNhanDAO = new BangChamCongCongNhanDAO();
-		maBangPhanCong = "";
+
 	}
 
 	@Override
 	public int getRowCount() {
 		// TODO Auto-generated method stub
-		return dsBLCN.size();
+		return danhSachBangLuongTableModel.size();
 	}
 
 	@Override
@@ -64,45 +64,34 @@ public class BangLuongCongNhanTableModel extends AbstractTableModel {
 //	private static final int LUONG = 7;
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
-		BangLuongCongNhan blcn = dsBLCN.get(rowIndex);
+		List<String> thongTinHienThi = danhSachBangLuongTableModel.get(rowIndex);
 		switch (columnIndex) {
-		case MABANGLUONG:
-			return blcn.getMaBangLuong();
+
 		case MACONGNHAN:
-			return blcn.getCongNhan().getMaCongNhan();
-		case HOTEN:
-			return blcn.getCongNhan().getTenCongNhan();
+			return thongTinHienThi.get(0);
+		case TENCONGNHAN:
+			return thongTinHienThi.get(1);
+		case TENSANPHAM:
+			return thongTinHienThi.get(2);
 		case TENCONGDOAN:
-			
-			
-			bangPhanCongCongNhan = bangPhanCongCongNhanDAO
-			.timPhanCongCongNhanBangMaCongNhan(blcn.getCongNhan().getMaCongNhan());
-			
-
-			return bangPhanCongCongNhan.getCongDoan().getTenCongDoan();
-			
-		case SOLUONGSP:
-
-			bangPhanCongCongNhan = bangPhanCongCongNhanDAO
-			.timPhanCongCongNhanBangMaCongNhan(blcn.getCongNhan().getMaCongNhan());
-			
-			
-			
-			maBangPhanCong = bangPhanCongCongNhan.getMaPhanCong();
-			
-			
-			
-			bangChamCongCongNhan = bangChamCongCongNhanDAO.timCongNhanBangMaPhanCong(maBangPhanCong);
-			
-
-			return bangChamCongCongNhan.getSoLuongLam();
-			
-		case LUONG:
-		
-			return blcn.getTongLuong();
+			return thongTinHienThi.get(3);
+		case SOLUONGLAM:
+			return thongTinHienThi.get(4);
+		case TONGTIENCONGDOAN:
+			double tongTien = Double.parseDouble(thongTinHienThi.get(5));
+			NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
+			String tongTienCongDoan = formatter.format(tongTien);
+			return tongTienCongDoan;
+		case TIENTHUONGCHUYENCAN:
+			double tienThuong = Double.parseDouble(thongTinHienThi.get(6));
+			NumberFormat formatter2 = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
+			String tienThuongChuyenCan = formatter2.format(tienThuong);
+			return tienThuongChuyenCan;
+		case THOIGIAN:
+			return thongTinHienThi.get(7);
 
 		default:
-			return blcn;
+			return thongTinHienThi;
 		}
 	}
 

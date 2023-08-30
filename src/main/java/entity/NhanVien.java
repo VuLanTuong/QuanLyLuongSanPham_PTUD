@@ -14,6 +14,8 @@ public class NhanVien {
 	private String gioiTinh;
 	private String vaiTro;
 	private String anhDaiDien;
+	private String trinhDoChuyenMon;
+	private String trinhDoNgoaiNgu;
 	public String getMaNhanVien() {
 		return maNhanVien;
 	}
@@ -74,12 +76,21 @@ public class NhanVien {
 	public void setAnhDaiDien(String anhDaiDien) {
 		this.anhDaiDien = anhDaiDien;
 	}
-	public NhanVien() {
-		super();
-		// TODO Auto-generated constructor stub
+	public String getTrinhDoChuyenMon() {
+		return trinhDoChuyenMon;
+	}
+	public void setTrinhDoChuyenMon(String trinhDoChuyenMon) {
+		this.trinhDoChuyenMon = trinhDoChuyenMon;
+	}
+	public String getTrinhDoNgoaiNgu() {
+		return trinhDoNgoaiNgu;
+	}
+	public void setTrinhDoNgoaiNgu(String trinhDoNgoaiNgu) {
+		this.trinhDoNgoaiNgu = trinhDoNgoaiNgu;
 	}
 	public NhanVien(String maNhanVien, String tenNhanVien, Date ngaySinh, String email, String soDienThoai,
-			DiaChi diaChi, Date ngayVaoLam, String gioiTinh, String vaiTro, String anhDaiDien) {
+			DiaChi diaChi, Date ngayVaoLam, String gioiTinh, String vaiTro, String anhDaiDien, String trinhDoChuyenMon,
+			String trinhDoNgoaiNgu) {
 		super();
 		this.maNhanVien = maNhanVien;
 		this.tenNhanVien = tenNhanVien;
@@ -91,12 +102,19 @@ public class NhanVien {
 		this.gioiTinh = gioiTinh;
 		this.vaiTro = vaiTro;
 		this.anhDaiDien = anhDaiDien;
+		this.trinhDoChuyenMon = trinhDoChuyenMon;
+		this.trinhDoNgoaiNgu = trinhDoNgoaiNgu;
+	}
+	public NhanVien() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public String toString() {
 		return "NhanVien [maNhanVien=" + maNhanVien + ", tenNhanVien=" + tenNhanVien + ", ngaySinh=" + ngaySinh
 				+ ", email=" + email + ", soDienThoai=" + soDienThoai + ", diaChi=" + diaChi + ", ngayVaoLam="
-				+ ngayVaoLam + ", gioiTinh=" + gioiTinh + ", vaiTro=" + vaiTro + ", anhDaiDien=" + anhDaiDien + "]";
+				+ ngayVaoLam + ", gioiTinh=" + gioiTinh + ", vaiTro=" + vaiTro + ", anhDaiDien=" + anhDaiDien
+				+ ", trinhDoChuyenMon=" + trinhDoChuyenMon + ", trinhDoNgoaiNgu=" + trinhDoNgoaiNgu + "]";
 	}
 	@Override
 	public int hashCode() {
@@ -113,6 +131,7 @@ public class NhanVien {
 		NhanVien other = (NhanVien) obj;
 		return Objects.equals(maNhanVien, other.maNhanVien);
 	}
+	
 	
 	
 	

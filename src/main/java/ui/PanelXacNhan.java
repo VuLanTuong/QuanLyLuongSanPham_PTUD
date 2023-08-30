@@ -38,6 +38,7 @@ public class PanelXacNhan extends javax.swing.JPanel {
         btnXacNhan.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnXacNhan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/check-mark.png"))); // NOI18N
         btnXacNhan.setText("Xác nhận");
+        btnXacNhan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnXacNhan.setPreferredSize(new java.awt.Dimension(137, 33));
         btnXacNhan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -48,11 +49,13 @@ public class PanelXacNhan extends javax.swing.JPanel {
         btnHuy.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnHuy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/close.png"))); // NOI18N
         btnHuy.setText("Hủy");
+        btnHuy.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnHuy.setPreferredSize(new java.awt.Dimension(137, 33));
 
         btnXoaRong.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnXoaRong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/eraser.png"))); // NOI18N
         btnXoaRong.setText("Xóa rỗng");
+        btnXoaRong.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnXoaRong.setPreferredSize(new java.awt.Dimension(137, 33));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

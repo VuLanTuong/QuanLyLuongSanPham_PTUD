@@ -16,7 +16,7 @@ public class CongNhanTableModel extends AbstractTableModel {
 	private static final int NGAYVAOLAM = 4;
 	private static final int NGAYSINH = 5;
 	private static final int GIOITINH = 6;
-	private static final int MATO = 7;
+	private static final int TENTO = 7;
 	
 	private CongNhanDAO congNhanDAO = new CongNhanDAO();
 	private String[] headers;
@@ -68,8 +68,8 @@ public class CongNhanTableModel extends AbstractTableModel {
 			return congNhan.getNgaySinh();
 		case GIOITINH:
 			return congNhan.getGioiTinh();
-		case MATO:
-			return congNhan.getToNhom().getMaToNhom();
+		case TENTO:
+			return congNhan.getToNhom().getTenToNhom();
 		default:
 			return congNhan;
 		}

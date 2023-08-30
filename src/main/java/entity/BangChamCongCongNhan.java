@@ -1,15 +1,16 @@
 package entity;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class BangChamCongCongNhan {
 	private String maChamCong;
 	private Date ngayChamCong;
+	private String caLam;
+	private String trangthai;
 	private int soLuongLam;
-	private String trangThai;
 	private BangPhanCongCongNhan phanCong;
 	private NhanVien nguoiChamCong;
-	
 	public String getMaChamCong() {
 		return maChamCong;
 	}
@@ -22,17 +23,23 @@ public class BangChamCongCongNhan {
 	public void setNgayChamCong(Date ngayChamCong) {
 		this.ngayChamCong = ngayChamCong;
 	}
+	public String getCaLam() {
+		return caLam;
+	}
+	public void setCaLam(String caLam) {
+		this.caLam = caLam;
+	}
+	public String getTrangthai() {
+		return trangthai;
+	}
+	public void setTrangthai(String trangthai) {
+		this.trangthai = trangthai;
+	}
 	public int getSoLuongLam() {
 		return soLuongLam;
 	}
 	public void setSoLuongLam(int soLuongLam) {
 		this.soLuongLam = soLuongLam;
-	}
-	public String getTrangThai() {
-		return trangThai;
-	}
-	public void setTrangThai(String trangThai) {
-		this.trangThai = trangThai;
 	}
 	public BangPhanCongCongNhan getPhanCong() {
 		return phanCong;
@@ -46,32 +53,20 @@ public class BangChamCongCongNhan {
 	public void setNguoiChamCong(NhanVien nguoiChamCong) {
 		this.nguoiChamCong = nguoiChamCong;
 	}
-	public BangChamCongCongNhan(String maChamCong, Date ngayChamCong, int soLuongLam, String trangThai,
+	public BangChamCongCongNhan(String maChamCong, Date ngayChamCong, String caLam, String trangthai, int soLuongLam,
 			BangPhanCongCongNhan phanCong, NhanVien nguoiChamCong) {
 		super();
 		this.maChamCong = maChamCong;
 		this.ngayChamCong = ngayChamCong;
+		this.caLam = caLam;
+		this.trangthai = trangthai;
 		this.soLuongLam = soLuongLam;
-		this.trangThai = trangThai;
 		this.phanCong = phanCong;
 		this.nguoiChamCong = nguoiChamCong;
 	}
-	public BangChamCongCongNhan() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	@Override
-	public String toString() {
-		return "BangChamCongCongNhan [maChamCong=" + maChamCong + ", ngayChamCong=" + ngayChamCong + ", soLuongLam="
-				+ soLuongLam + ", trangThai=" + trangThai + ", phanCong=" + phanCong + ", nguoiChamCong="
-				+ nguoiChamCong + "]";
-	}
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((maChamCong == null) ? 0 : maChamCong.hashCode());
-		return result;
+		return Objects.hash(maChamCong);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -82,12 +77,18 @@ public class BangChamCongCongNhan {
 		if (getClass() != obj.getClass())
 			return false;
 		BangChamCongCongNhan other = (BangChamCongCongNhan) obj;
-		if (maChamCong == null) {
-			if (other.maChamCong != null)
-				return false;
-		} else if (!maChamCong.equals(other.maChamCong))
-			return false;
-		return true;
+		return Objects.equals(maChamCong, other.maChamCong);
 	}
+	public BangChamCongCongNhan() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "BangChamCongCongNhan [maChamCong=" + maChamCong + ", ngayChamCong=" + ngayChamCong + ", caLam=" + caLam
+				+ ", trangthai=" + trangthai + ", soLuongLam=" + soLuongLam + ", phanCong=" + phanCong
+				+ ", nguoiChamCong=" + nguoiChamCong + "]";
+	}
+	
 	
 }
